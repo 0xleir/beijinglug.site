@@ -1,0 +1,14 @@
+{% set active_page = "archives" %}
+{% extends "base.html" %}
+{% block content %}
+<section id="content" class="body">
+<h3>Archives for {{ SITESUBTITLE }}</h3>
+
+<dl>
+{% for article in dates %}
+    <dt>{{ article.locale_date }}</dt>
+    <dd><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></dd>
+{% endfor %}
+</dl>
+</section>
+{% endblock %}
